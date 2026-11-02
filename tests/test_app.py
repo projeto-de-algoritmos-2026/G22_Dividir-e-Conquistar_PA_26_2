@@ -12,6 +12,7 @@ def _foto():
     buffer = io.BytesIO()
     Image.fromarray(pixels).save(buffer, format="PNG")
     buffer.seek(0)
+    buffer.name = "foto.png"
     return buffer
 
 
@@ -26,8 +27,17 @@ def test_com_foto_borra_e_compara():
         app = AppTest.from_file("app.py", default_timeout=30).run()
         assert not app.exception
         assert len(app.metric) == 0
+        assert "Nenhum rosto" in app.warning[0].value
 
         app.select_slider[1].set_value(64)
         app.button[0].click().run()
         assert not app.exception
         assert len(app.metric) == 2
+
+
+def test_modo_mouse_borra_caixa_padrao():
+    with patch("streamlit.file_uploader", return_value=_foto()):
+        app = AppTest.from_file("app.py", default_timeout=30).run()
+        app.radio[0].set_value("Desenhar com o mouse").run()
+        assert not app.exception
+        assert len(app.warning) == 0
