@@ -113,11 +113,25 @@ python -m pytest
 
 ## Screenshots
 
-<!-- TODO: adicionar prints da interface em docs/screenshots/ -->
+Detecção automática: 29 rostos achados e borrados.
+
+![Detecção automática](docs/screenshots/deteccao_automatica.png)
+
+Seleção com o mouse.
+
+![Seleção com o mouse](docs/screenshots/selecao_mouse.png)
+
+Rosto detectado em outra foto.
+
+![Astronauta](docs/screenshots/astronauta.png)
+
+Foto sem rosto.
+
+![Foto sem rosto](docs/screenshots/sem_rosto.png)
 
 ## Vídeo
 
-<!-- TODO: link da apresentação -->
+[Assistir à apresentação](docs/video/apresentacao.mp4)
 
 ## Outros
 
