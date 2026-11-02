@@ -1,4 +1,6 @@
 numpy
+opencv-python-headless<5
 pillow
 streamlit
+streamlit-cropper
 pytest

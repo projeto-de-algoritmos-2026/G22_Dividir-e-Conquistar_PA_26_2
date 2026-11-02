@@ -98,8 +98,10 @@ streamlit run app.py
 
 No navegador:
 
-1. Envie uma foto.
-2. Ajuste os sliders da barra lateral até o retângulo vermelho cobrir o rosto.
+1. Envie uma foto. Há exemplos em `imagens_teste/` e `imagens_apresentacao/`.
+2. Escolha como marcar os rostos na barra lateral:
+   - **Detectar automaticamente**: acha e borra todos os rostos da foto.
+   - **Desenhar com o mouse**: arraste e redimensione a caixa vermelha sobre o rosto.
 3. Escolha a intensidade do borrão.
 4. Use **Comparar** para medir o Strassen contra o dividir e conquistar clássico.
 
@@ -121,3 +123,8 @@ python -m pytest
 
 - Fotos com mais de 600 pixels de largura são reduzidas para o borrão rodar rápido.
 - Os testes comparam o Strassen com a multiplicação do numpy (`A @ B`).
+- A detecção de rostos não é parte do dividir e conquistar: ela usa a rede YuNet
+  do OpenCV (`modelos/face_detection_yunet_2023mar.onnx`, do
+  [opencv_zoo](https://github.com/opencv/opencv_zoo), licença MIT) só para achar
+  onde borrar. O borrão continua sendo feito com Strassen.
+- As fotos de `imagens_teste/` e `imagens_apresentacao/` são do Wikimedia Commons.
