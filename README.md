@@ -131,7 +131,9 @@ Foto sem rosto.
 
 ## Vídeo
 
-[Assistir à apresentação](docs/video/apresentacao.mp4)
+[![Assistir à apresentação](https://img.youtube.com/vi/OFsWm7Y8r80/hqdefault.jpg)](https://youtu.be/OFsWm7Y8r80)
+
+[Assistir à apresentação no YouTube](https://youtu.be/OFsWm7Y8r80)
 
 ## Outros
 
